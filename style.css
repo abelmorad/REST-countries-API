@@ -81,6 +81,9 @@ header {
     border:  none;
     border-radius: 0px 5px 5px 0px;
 }
+.search-field::placeholder {
+    padding-left: 1rem;
+}
 .fa-magnifying-glass {
     padding: 0rem 1.5rem;
     font-size: 1.3rem;
@@ -98,4 +101,20 @@ header {
     border:  none;
     padding-left: 1rem;
     border-radius: 5px 5px 5px 5px;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+  
+    background-image: url(./images/chevron-down-solid.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px);
+    background-size: 1rem;
+}
+.region-filter-dark {
+    background-image: url(./images/chevron-down-solid-white.png);
+    background-size: 1rem;
+    color: var(--white-color-1);
+    background-color: var(--dark-color-1);
 }

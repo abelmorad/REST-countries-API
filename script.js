@@ -4,6 +4,7 @@ const headerMode = document.getElementById('header');
 const searchBtn = document.getElementById('searchBtn');
 const searchImg = document.getElementById('searchImg');
 const searchFieldMode = document.getElementById('searchBar');
+const regionFilter = document.getElementById('regionFilter');
 const colorModeBtn = document.querySelector('.fa-regular');
 const colorToggle = document.querySelector('.color-toggle');
 
@@ -15,6 +16,7 @@ function colorChange() {
     searchFieldMode.classList.toggle('search-field-dark');
     searchBtn.classList.toggle('search-btn-dark');
     searchImg.classList.toggle('fa-magnifying-glass-dark');
+    regionFilter.classList.toggle('region-filter-dark');
 
     // Replaces text when toggled
     if (colorMode.classList.contains('dark-mode')) {
