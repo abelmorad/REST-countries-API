@@ -16,8 +16,26 @@
     <main>
         <header id="header">
             <h1>Where in the world?</h1>
-            <i class="fa-solid fa-moon fa-sm"><span class="color-toggle">  Dark Mode</span></i>
+            <i class="fa-regular fa-moon fa-l"><span class="color-toggle">  Dark Mode</span></i>
         </header>
+        <section class="form-container">
+            <form id="" class="search-form" action="">
+                    <button type="submit" class="search-btn">
+                        <img class="search-btn-img" src="./images/magnifying-glass-solid.svg">
+                    </button>
+                    <input name="search" id="searchBar" class="search-field" placeholder="Search for a country...">
+            </form>
+            <form action="">
+                <select name="regionfilter" id="regionFilter" class="region-filter">
+                    <option value="" disabled selected>Filter by Region</option>
+                    <option value="africa">Africa</option>
+                    <option value="america">America</option>
+                    <option value="asia">Asia</option>
+                    <option value="europe">Europe</option>
+                    <option value="oceania">Oceania</option>
+                </select>
+            </form>
+        </section>
     </main>
     <script src="./script.js"></script>
 </body>
