@@ -121,13 +121,13 @@ header {
 /* country container */
 .country-container {
     display: grid;
-    align-items: center;
+    align-self: center;
     justify-content: center;
-    grid-template-columns: repeat(4, auto);
+    gap: 3.5rem;
+    grid-template-columns: 320px 320px 320px 320px;
     grid-template-rows: auto;
-    gap: 4rem;
     margin-top: 1rem;
-    width: 100%;
+    padding: 0rem 4rem;
 }
 .country-box {
     display: flex;
@@ -136,7 +136,8 @@ header {
     background-color: var(--white-color-1);
     color: var(--dark-color-1);
     border: none;
-    height: 20rem;
+    width: 100%;
+    height: 24.5rem;
     border-radius: 5px;
 }
 .country-box-dark {
@@ -144,8 +145,8 @@ header {
     color: var(--white-color-1);
 }
 .country-img {
-    width: 315px;
-    height: 180px;
+    width: 100%;
+    height: 220px;
     border-radius: 5px 5px 0px 0px;
 }
 .country-small-details h2 {

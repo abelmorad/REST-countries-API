@@ -20,10 +20,10 @@ function requestCountryData() {
                 countryFigure.innerHTML = `<figure id="countryBox" class="country-box">
                 <img id="countryImg" class="country-img" src="${country.flags.png}" alt="" srcset="">
                 <div class="country-small-details">
-                    <h2 class="country-name"></h2>
-                    <p>Population: <span class="population"></span></p>
-                    <p>Region: <span class="region"></span></p>
-                    <p>Capital: <span class="capital"></span></p>
+                    <h2 class="country-name">${country.name}</h2>
+                    <p>Population: ${country.population}</p>
+                    <p>Region: ${country.region} </p>
+                    <p>Capital: ${country.capital} </p>
                 </div>
             </figure>`;
             countryContainer.appendChild(countryFigure);
