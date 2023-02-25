@@ -125,16 +125,18 @@ header {
     justify-content: center;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: auto;
-    gap: 3.6rem;
-
+    gap: 4rem;
     margin-top: 1rem;
+    width: 100%;
 }
 .country-box {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    justify-content: space-between;
     background-color: var(--white-color-1);
+    color: var(--dark-color-1);
     border: none;
+    height: 20rem;
     border-radius: 5px;
 }
 .country-box-dark {
@@ -142,8 +144,8 @@ header {
     color: var(--white-color-1);
 }
 .country-img {
-    width: 250px;
-    height: auto;
+    width: 315px;
+    height: 180px;
     border-radius: 5px 5px 0px 0px;
 }
 .country-small-details h2 {
