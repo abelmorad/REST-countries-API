@@ -20,18 +20,38 @@ function requestCountryData() {
                 countryFigure.innerHTML = `<figure id="countryBox" class="country-box">
                 <img id="countryImg" class="country-img" src="${country.flags.png}" alt="" srcset="">
                 <div class="country-small-details">
-                    <h2 class="country-name">${country.name}</h2>
-                    <p>Population: ${country.population}</p>
-                    <p>Region: ${country.region} </p>
-                    <p>Capital: ${country.capital} </p>
+                    <h2 id="countryName">${country.name}</h2>
+                    <p id="countryPopulation">Population: ${country.population}</p>
+                    <p id="countryRegion">Region: ${country.region} </p>
+                    <p id="countryCapital">Capital: ${country.capital} </p>
                 </div>
             </figure>`;
+            // console.log(country.region);
             countryContainer.appendChild(countryFigure);
             })
         }
     }
     xhr.send();
 }
+// region filter
+function selectedRegion() {
+    const regionValue =  document.getElementById('regionFilter').value;
+    const regionAsia = ['asia'];
+    const countryBox = document.querySelectorAll('.country-box');
+    
+    countryBox.forEach(region => {
+        if(regionAsia.includes(regionValue)) {
+            if(region.classList.contains(regionValue)) {
+                region.style.display = 'grid';
+            } else {
+                region.style.display = 'grid';
+            }
+        } else {
+            region.style.display = 'grid';
+        }
+    })
+} 
+
 
 // dark mode & light mode
 const colorMode  = document.body;
@@ -62,3 +82,4 @@ function colorChange() {
         colorToggle.textContent = ' Dark Mode';
     }
 }
+

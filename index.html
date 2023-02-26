@@ -26,16 +26,17 @@
                     </button>
                     <input name="search" id="searchBar" class="search-field" placeholder="Search for a country...">
             </form>
-            <form action="">
-                <select id="regionFilter" class="region-filter" name="regionfilter">
-                    <option value="" disabled selected>Filter by Region</option>
-                    <option value="africa">Africa</option>
-                    <option value="america">America</option>
-                    <option value="asia">Asia</option>
-                    <option value="europe">Europe</option>
-                    <option value="oceania">Oceania</option>
+            <!-- Region Filter -->
+            <div class="options">
+                <select id="regionFilter" class="region-filter" name="regionfilter" onchange="selectedRegion()">
+                        <option value="" disabled selected>Filter by Region</option>
+                        <option value="africa">Africa</option>
+                        <option value="america">America</option>
+                        <option value="asia">Asia</option>
+                        <option value="europe">Europe</option>
+                        <option value="oceania">Oceania</option>
                 </select>
-            </form>
+            </div>
         </section>
         <section class="country-container"> 
             <!-- <figure id="countryBox" class="country-box">
