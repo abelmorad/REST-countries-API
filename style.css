@@ -157,3 +157,11 @@ header {
     padding-left: 1rem;
     padding-bottom: 2rem;
 }
+@media (max-width: 1440px) {
+    .country-container {
+        grid-template-columns: repeat(4, 260px);
+    }
+    .country-img {
+        height: 190px;
+    }
+}
