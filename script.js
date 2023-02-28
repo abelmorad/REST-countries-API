@@ -1,16 +1,4 @@
-// search filter by country
-let data = [];
-const searchInput = document.querySelector('[data-search]');
-searchInput.addEventListener('input', (e) => {
-    const value = e.target.value.toLowerCase();
-    data.forEach(country => {
-        const isVisible = 
-        country.name.toLowerCase().includes(value);
-        country.element.classList.toggle('hide-card', !isVisible);
-    })
-});
-
-// fetch api ajax request
+// api ajax request
 window.addEventListener('load', requestCountryData);
 
 function requestCountryData() {
@@ -32,8 +20,6 @@ function requestCountryData() {
                 const countryFlag = countryCard.querySelector('[country-flag]');
                 const countryPopulation = countryCard.querySelector('[country-population]');
                 const countryRegion = countryCard.querySelector('[country-region]');
-                // const countryContainer = document.querySelector('.country-container');
-                // const countryFigure = document.createElement('figure');
                 
                 countryFlag.src = country.flags.png;
                 countryPopulation.textContent = country.population;
@@ -45,24 +31,11 @@ function requestCountryData() {
                 return {
                     name: country.name,
                     // population: country.population,s
-                    // region: country.region,
+                    region: country.region,
                     // capital: country.capital,
                     // flags: country.flags.png,
                     element: countryCard
                 }
-
-                // console.log(countryCard)
-            //     countryFigure.innerHTML = `<figure id="countryBox" class="country-box">
-            //     <img id="countryImg" class="country-img" src="${country.flags.png}" alt="" srcset="">
-            //     <div class="country-small-details">
-            //         <h2 id="countryName">${country.name}</h2>
-            //         <p id="countryPopulation">Population: ${country.population}</p>
-            //         <p id="countryRegion">Region: ${country.region} </p>
-            //         <p id="countryCapital">Capital: ${country.capital} </p>
-            //     </div>
-            // </figure>`;
-            // console.log(country.region);
-            // countryContainer.appendChild(countryFigure);
             })
         }
     }
@@ -97,4 +70,34 @@ function colorChange() {
         colorToggle.textContent = ' Dark Mode';
     }
 }
+
+// search filter by country
+let data = [];
+const searchInput = document.querySelector('[data-search]');
+searchInput.addEventListener('input', (e) => {
+    const value = e.target.value.toLowerCase();
+    data.forEach(country => {
+        const isVisible = 
+        country.name.toLowerCase().includes(value);
+        country.element.classList.toggle('hide-card', !isVisible);
+    })
+});
+//filter by region
+const regionInput = document.querySelector('[region-input]');
+regionInput.addEventListener('change', () => {
+    const regionFilterValue = document.getElementById('regionFilter').value;
+    
+    data.forEach(country => {
+        const isVisible = 
+        country.region.toLowerCase().includes(regionFilterValue);
+        country.element.classList.toggle('hide-card',!isVisible);
+
+        if (regionFilterValue === "all") {
+            country.element.classList.add('show-card');
+        } else {
+            isVisible;
+        }
+    })
+});
+
 

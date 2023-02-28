@@ -166,3 +166,6 @@ header {
 .hide-card{
     display: none;
 }
+.show-card {
+    display: block;
+}
