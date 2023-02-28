@@ -61,7 +61,7 @@ header {
     padding: 0rem 4rem;
 }
 /* search form */
-.search-form {
+.search-container {
     display: inline-flex;
 }
 .search-btn {
