@@ -167,5 +167,5 @@ header {
     display: none;
 }
 .show-card {
-    display: block;
+    display: flex;
 }

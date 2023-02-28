@@ -47,10 +47,10 @@ const headerMode = document.getElementById('header');
 const searchBtn = document.getElementById('searchBtn');
 const searchImg = document.getElementById('searchImg');
 const searchFieldMode = document.getElementById('searchBar');
-// const countryBoxMode = document.getElementById('countryBox');
 const regionFilter = document.getElementById('regionFilter');
 const colorModeBtn = document.querySelector('.fa-regular');
 const colorToggle = document.querySelector('.color-toggle');
+// const countryBoxMode = document.getElementById('countryBox');
 
 colorModeBtn.addEventListener('click', colorChange);
 
@@ -91,9 +91,10 @@ regionInput.addEventListener('change', () => {
         const isVisible = 
         country.region.toLowerCase().includes(regionFilterValue);
         country.element.classList.toggle('hide-card',!isVisible);
+        country.element.classList.remove('show-card');
 
         if (regionFilterValue === "all") {
-            country.element.classList.add('show-card');
+            country.element.classList.toggle('show-card');
         } else {
             isVisible;
         }
