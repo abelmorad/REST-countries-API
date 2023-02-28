@@ -30,10 +30,10 @@ function requestCountryData() {
                 countryCardContainer.appendChild(countryCard);
                 return {
                     name: country.name,
-                    // population: country.population,s
+                    population: country.population,
                     region: country.region,
-                    // capital: country.capital,
-                    // flags: country.flags.png,
+                    capital: country.capital,
+                    flags: country.flags.png,
                     element: countryCard
                 }
             })
@@ -50,7 +50,6 @@ const searchFieldMode = document.getElementById('searchBar');
 const regionFilter = document.getElementById('regionFilter');
 const colorModeBtn = document.querySelector('.fa-regular');
 const colorToggle = document.querySelector('.color-toggle');
-// const countryBoxMode = document.getElementById('countryBox');
 
 colorModeBtn.addEventListener('click', colorChange);
 
@@ -61,7 +60,6 @@ function colorChange() {
     searchBtn.classList.toggle('search-btn-dark');
     searchImg.classList.toggle('fa-magnifying-glass-dark');
     regionFilter.classList.toggle('region-filter-dark');
-    // countryBoxMode.classList.toggle('country-box-dark');
     
     // Replaces text when toggled
     if (colorMode.classList.contains('dark-mode')) {
@@ -91,10 +89,9 @@ regionInput.addEventListener('change', () => {
         const isVisible = 
         country.region.toLowerCase().includes(regionFilterValue);
         country.element.classList.toggle('hide-card',!isVisible);
-        country.element.classList.remove('show-card');
 
         if (regionFilterValue === "all") {
-            country.element.classList.toggle('show-card');
+            country.element.classList.remove('hide-card');
         } else {
             isVisible;
         }
