@@ -1,11 +1,20 @@
-// pull data from the REST Countries API and display
-let countryImg = document.getElementById('countryImg');
-let countryName = document.querySelector('.country-name');
-const url = 'data.json';
+// search filter by country
+let data = [];
+const searchInput = document.querySelector('[data-search]');
+searchInput.addEventListener('input', (e) => {
+    const value = e.target.value.toLowerCase();
+    data.forEach(country => {
+        const isVisible = 
+        country.name.toLowerCase().includes(value);
+        country.element.classList.toggle('hide-card', !isVisible);
+    })
+});
 
+// fetch api ajax request
 window.addEventListener('load', requestCountryData);
 
 function requestCountryData() {
+    
     let xhr = new XMLHttpRequest();
 
     xhr.open('GET', 'https://restcountries.com/v2/all', true);
@@ -13,10 +22,8 @@ function requestCountryData() {
     xhr.onload = function () {
         if(xhr.status == 200) { 
             let countries = JSON.parse(this.response);
-            countries.forEach(country => {
-                // const countryContainer = document.querySelector('.country-container');
-                // const countryFigure = document.createElement('figure');
-                
+            data = countries.map(country => {
+                // for country template display 
                 const countryCardContainer =  document.querySelector('[country-card-container]');
                 const countryTemplate = document.querySelector('[country-template]');
                 const countryCard = countryTemplate.content.cloneNode(true).children[0];
@@ -25,6 +32,8 @@ function requestCountryData() {
                 const countryFlag = countryCard.querySelector('[country-flag]');
                 const countryPopulation = countryCard.querySelector('[country-population]');
                 const countryRegion = countryCard.querySelector('[country-region]');
+                // const countryContainer = document.querySelector('.country-container');
+                // const countryFigure = document.createElement('figure');
                 
                 countryFlag.src = country.flags.png;
                 countryPopulation.textContent = country.population;
@@ -33,6 +42,14 @@ function requestCountryData() {
                 countryCapital.textContent = country.capital;
 
                 countryCardContainer.appendChild(countryCard);
+                return {
+                    name: country.name,
+                    // population: country.population,s
+                    // region: country.region,
+                    // capital: country.capital,
+                    // flags: country.flags.png,
+                    element: countryCard
+                }
 
                 // console.log(countryCard)
             //     countryFigure.innerHTML = `<figure id="countryBox" class="country-box">
@@ -51,9 +68,6 @@ function requestCountryData() {
     }
     xhr.send();
 }
-// search filter by country
-
-
 // dark mode & light mode
 const colorMode  = document.body;
 const headerMode = document.getElementById('header');
