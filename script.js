@@ -14,43 +14,44 @@ function requestCountryData() {
         if(xhr.status == 200) { 
             let countries = JSON.parse(this.response);
             countries.forEach(country => {
-                const countryContainer = document.querySelector('.country-container');
-                const countryFigure = document.createElement('figure');
+                // const countryContainer = document.querySelector('.country-container');
+                // const countryFigure = document.createElement('figure');
+                
+                const countryCardContainer =  document.querySelector('[country-card-container]');
+                const countryTemplate = document.querySelector('[country-template]');
+                const countryCard = countryTemplate.content.cloneNode(true).children[0];
+                const countryNames = countryCard.querySelector('[country-name]');
+                const countryCapital = countryCard.querySelector('[country-capital]');
+                const countryFlag = countryCard.querySelector('[country-flag]');
+                const countryPopulation = countryCard.querySelector('[country-population]');
+                const countryRegion = countryCard.querySelector('[country-region]');
+                
+                countryFlag.src = country.flags.png;
+                countryPopulation.textContent = country.population;
+                countryNames.textContent = country.name;
+                countryRegion.textContent = country.region;
+                countryCapital.textContent = country.capital;
 
-                countryFigure.innerHTML = `<figure id="countryBox" class="country-box">
-                <img id="countryImg" class="country-img" src="${country.flags.png}" alt="" srcset="">
-                <div class="country-small-details">
-                    <h2 id="countryName">${country.name}</h2>
-                    <p id="countryPopulation">Population: ${country.population}</p>
-                    <p id="countryRegion">Region: ${country.region} </p>
-                    <p id="countryCapital">Capital: ${country.capital} </p>
-                </div>
-            </figure>`;
+                countryCardContainer.appendChild(countryCard);
+
+                // console.log(countryCard)
+            //     countryFigure.innerHTML = `<figure id="countryBox" class="country-box">
+            //     <img id="countryImg" class="country-img" src="${country.flags.png}" alt="" srcset="">
+            //     <div class="country-small-details">
+            //         <h2 id="countryName">${country.name}</h2>
+            //         <p id="countryPopulation">Population: ${country.population}</p>
+            //         <p id="countryRegion">Region: ${country.region} </p>
+            //         <p id="countryCapital">Capital: ${country.capital} </p>
+            //     </div>
+            // </figure>`;
             // console.log(country.region);
-            countryContainer.appendChild(countryFigure);
+            // countryContainer.appendChild(countryFigure);
             })
         }
     }
     xhr.send();
 }
-// region filter
-function selectedRegion() {
-    const regionValue =  document.getElementById('regionFilter').value;
-    const regionAsia = ['asia'];
-    const countryBox = document.querySelectorAll('.country-box');
-    
-    countryBox.forEach(region => {
-        if(regionAsia.includes(regionValue)) {
-            if(region.classList.contains(regionValue)) {
-                region.style.display = 'grid';
-            } else {
-                region.style.display = 'grid';
-            }
-        } else {
-            region.style.display = 'grid';
-        }
-    })
-} 
+// search filter by country
 
 
 // dark mode & light mode
