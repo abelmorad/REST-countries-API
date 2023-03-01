@@ -109,7 +109,7 @@ header {
     background-image: url(./images/chevron-down-solid.svg);
     background-repeat: no-repeat;
     background-position: calc(100% - 10px);
-    background-size: 0.7rem;
+    background-size: 1rem;
 }
 .region-filter-dark {
     background-image: url(./images/chevron-down-solid-white.png);
