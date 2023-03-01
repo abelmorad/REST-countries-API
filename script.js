@@ -97,5 +97,3 @@ regionInput.addEventListener('change', () => {
         }
     })
 });
-
-
