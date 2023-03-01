@@ -10,7 +10,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <link rel="shortcut icon" href="./images/flag-solid.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/earth.png" type="image/x-icon">
     <title>Countries | Frontendmentor.io</title>
 </head>
 <body>
@@ -41,15 +41,17 @@
         </section>
         <section class="country-container" country-card-container> 
             <template country-template>
-                <figure id="countryBox" class="country-box" country-card-mode>
-                    <img id="countryImg" class="country-img" src="" alt="" srcset="" country-flag>
-                    <div class="country-small-details">
-                        <h2 class="country-name" country-name></h2>
-                        <p>Population: <span class="population" country-population></span></p>
-                        <p>Region: <span class="region" country-region></span></p>
-                        <p>Capital: <span class="capital" country-capital></span></p>
-                    </div>
-                </figure>
+                <a href="./info.html" open-info>
+                    <figure id="countryBox" class="country-box" country-card-mode>
+                        <img id="countryImg" class="country-img" src="" alt="" srcset="" country-flag>
+                        <div class="country-small-details">
+                            <h2 class="country-name" country-name></h2>
+                            <p>Population: <span class="population" country-population></span></p>
+                            <p>Region: <span class="region" country-region></span></p>
+                            <p>Capital: <span class="capital" country-capital></span></p>
+                        </div>
+                    </figure>
+                </a>
             </template>
         </section>
     </main>
