@@ -15,6 +15,7 @@ function requestCountryData() {
                 const countryCardContainer =  document.querySelector('[country-card-container]');
                 const countryTemplate = document.querySelector('[country-template]');
                 const countryCard = countryTemplate.content.cloneNode(true).children[0];
+
                 const countryNames = countryCard.querySelector('[country-name]');
                 const countryCapital = countryCard.querySelector('[country-capital]');
                 const countryFlag = countryCard.querySelector('[country-flag]');
@@ -28,6 +29,7 @@ function requestCountryData() {
                 countryCapital.textContent = country.capital;
 
                 countryCardContainer.appendChild(countryCard);
+                    
                 return {
                     name: country.name,
                     population: country.population,
@@ -97,3 +99,24 @@ regionInput.addEventListener('change', () => {
         }
     })
 });
+// DETAILED COUNTRY INFORMATION INFO PAGE 
+//  const infoContainer = document.querySelector('more-info-container');
+//  const infoTemplate = document.querySelector('[info-template]');
+//  const infos = infoTemplate.content.cloneNode(true).children[0];
+
+//  const infoCountry = document.querySelector('[info-country]');
+//  const infoRegion = document.querySelector('[info-region]');
+//  const infoCapital = document.querySelector('[info-capital]');
+//  const infoPopulation = document.querySelector('[info-population]');
+//  const infoFlag = document.querySelector('[info-flag]');
+//  const infoLang = document.querySelector('[info-languages]');
+//  const infoCurr = document.querySelector('[info-currency]');
+//  const infoSub = document.querySelector('[info-sub-region]');
+//  const infoNative = document.querySelector('[info-native-name]');
+//  const infoDomain = document.querySelector('[info-top-lvl-domain]');
+
+//  infoFlag.src = country.flags.png;
+//  infoCountry.textContent = country.name;
+ 
+ 
+// infoContainer.appendChild(infos);
